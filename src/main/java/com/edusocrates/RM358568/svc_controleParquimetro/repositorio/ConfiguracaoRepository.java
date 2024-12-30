@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ConfiguracaoRepository extends JpaRepository<Configuracao, Long> {
-
-    Configuracao findTopByOrderByIdDesc();
+    Configuracao findTopByOrderByIdDesc();  // Obter a configuração mais recente
 }

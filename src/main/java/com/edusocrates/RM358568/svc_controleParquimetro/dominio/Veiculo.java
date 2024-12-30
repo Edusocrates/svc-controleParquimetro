@@ -1,10 +1,14 @@
 package com.edusocrates.RM358568.svc_controleParquimetro.dominio;
 
+import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Enum.Status;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "veiculos")
@@ -18,12 +22,20 @@ public class Veiculo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
-    private String placa;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "vaga_id", nullable = false)
+    private Vaga vaga;  // Relacionamento com Vaga
 
-    @Column(nullable = false)
-    private String modelo;
+    @Column(name = "hora_entrada", nullable = false)
+    private LocalDateTime horaEntrada;
 
-    @Column(nullable = false)
-    private String cor;
+    @Column(name = "hora_saida")
+    private LocalDateTime horaSaida;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
+    private Status status;
+
+    @Column(name = "valor_cobrado")
+    private BigDecimal valorCobrado;
 }

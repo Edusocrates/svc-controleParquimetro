@@ -1,9 +1,12 @@
 package com.edusocrates.RM358568.svc_controleParquimetro.dominio.DTO;
 
+import java.time.LocalTime;
+
 public record ConfiguracaoDTO(
         Long id,
-        Integer capacidadeTotal,
-        String horarioFuncionamentoInicio,
-        String horarioFuncionamentoFim,
-        Double tempoMaximoPermissao
+        LocalTime horaInicioFuncionamento,
+        LocalTime horaFimFuncionamento,
+        Integer limiteCapacidade,
+        Double valorMulta,
+        Integer tempoMaximoPermanencia
 ) {}
