@@ -7,6 +7,8 @@ import lombok.*;
 @Entity
 @Table(name = "vagas")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Vaga {
 
     @Id

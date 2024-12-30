@@ -1,4 +1,4 @@
-package com.edusocrates.RM358568.svc_controleParquimetro.repositorio;
+package com.edusocrates.RM358568.svc_controleParquimetro.infraestrutura.repositorio;
 
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Enum.StatusVaga;
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Vaga;

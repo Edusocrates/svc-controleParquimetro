@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/mydatabase
+    url: jdbc:postgresql://localhost:5432/mydatabase
     username: myuser
     password: secret
     driver-class-name: org.postgresql.Driver
@@ -13,6 +13,13 @@ spring:
       max-lifetime: 1800000 # 30 minutos
       idle-timeout: 30000 # 30 segundos
       maximum-pool-size: 10
+  flyway:
+    enabled: true
+    url: jdbc:postgresql://localhost:5432/mydatabase
+    user: myuser
+    password: secret
+    locations: classpath:db/migration
+    baseline-on-migrate: true
   logging:
     level:
       org.springframework.jdbc.core: DEBUG

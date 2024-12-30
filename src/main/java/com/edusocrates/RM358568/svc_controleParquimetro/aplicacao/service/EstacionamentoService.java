@@ -1,4 +1,4 @@
-package com.edusocrates.RM358568.svc_controleParquimetro.core.service;
+package com.edusocrates.RM358568.svc_controleParquimetro.aplicacao.service;
 
 
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Configuracao;
@@ -7,12 +7,13 @@ import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Enum.StatusVaga;
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Multa;
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Vaga;
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Veiculo;
-import com.edusocrates.RM358568.svc_controleParquimetro.repositorio.ConfiguracaoRepository;
-import com.edusocrates.RM358568.svc_controleParquimetro.repositorio.MultaRepository;
-import com.edusocrates.RM358568.svc_controleParquimetro.repositorio.VagaRepository;
-import com.edusocrates.RM358568.svc_controleParquimetro.repositorio.VeiculoRepository;
+import com.edusocrates.RM358568.svc_controleParquimetro.infraestrutura.repositorio.ConfiguracaoRepository;
+import com.edusocrates.RM358568.svc_controleParquimetro.infraestrutura.repositorio.MultaRepository;
+import com.edusocrates.RM358568.svc_controleParquimetro.infraestrutura.repositorio.VagaRepository;
+import com.edusocrates.RM358568.svc_controleParquimetro.infraestrutura.repositorio.VeiculoRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -58,7 +59,7 @@ public class EstacionamentoService {
 
     // Registrar a saída do veículo e calcular o valor cobrado
     @Transactional
-    public Veiculo registrarSaida(Long veiculoId) {
+    public Veiculo registrarSaida(Long veiculoId) throws ChangeSetPersister.NotFoundException {
         Veiculo veiculo = veiculoRepository.findById(veiculoId).orElseThrow(() -> new RuntimeException("Veículo não encontrado"));
 
         if (veiculo.getStatus() == Status.SAIDO) {
@@ -88,8 +89,8 @@ public class EstacionamentoService {
     }
 
     // Método para calcular o valor do estacionamento
-    private BigDecimal calcularValorEstacionamento(long horasEstacionado) {
-        Configuracao configuracao = configuracaoRepository.findTopByOrderByIdDesc();
+    private BigDecimal calcularValorEstacionamento(long horasEstacionado) throws ChangeSetPersister.NotFoundException {
+        Configuracao configuracao = configuracaoRepository.findTopByOrderByIdAsc().orElseThrow(ChangeSetPersister.NotFoundException::new);
 
         // Exemplo simples: valor cobrado por hora
         BigDecimal valorHora = BigDecimal.valueOf(5);  // Exemplo de valor por hora
@@ -97,8 +98,8 @@ public class EstacionamentoService {
     }
 
     // Verificar se o veículo ultrapassou o tempo máximo de permanência
-    private void verificarMulta(Veiculo veiculo) {
-        Configuracao configuracao = configuracaoRepository.findTopByOrderByIdDesc();
+    private void verificarMulta(Veiculo veiculo) throws ChangeSetPersister.NotFoundException {
+        Configuracao configuracao = configuracaoRepository.findTopByOrderByIdAsc().orElseThrow(ChangeSetPersister.NotFoundException::new);
 
         long horasEstacionado = Duration.between(veiculo.getHoraEntrada(), veiculo.getHoraSaida()).toHours();
 
@@ -114,8 +115,8 @@ public class EstacionamentoService {
     }
 
     // Verificar se o estacionamento atingiu a capacidade máxima
-    public boolean isEstacionamentoCheio() {
-        Configuracao configuracao = configuracaoRepository.findTopByOrderByIdDesc();
+    public boolean isEstacionamentoCheio() throws ChangeSetPersister.NotFoundException {
+        Configuracao configuracao = configuracaoRepository.findTopByOrderByIdAsc().orElseThrow(ChangeSetPersister.NotFoundException::new);
         long vagasOcupadas = vagaRepository.countByStatus(StatusVaga.OCUPADA);
 
         return vagasOcupadas >= configuracao.getLimiteCapacidade();

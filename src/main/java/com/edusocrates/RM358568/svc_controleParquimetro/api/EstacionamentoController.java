@@ -1,10 +1,11 @@
 package com.edusocrates.RM358568.svc_controleParquimetro.api;
 
 
-import com.edusocrates.RM358568.svc_controleParquimetro.core.service.EstacionamentoService;
+import com.edusocrates.RM358568.svc_controleParquimetro.aplicacao.service.EstacionamentoService;
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.DTO.VeiculoDTO;
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Veiculo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,7 @@ public class EstacionamentoController {
 
     // Endpoint para registrar a saída do veículo
     @PostMapping("/saida/{veiculoId}")
-    public ResponseEntity<VeiculoDTO> registrarSaida(@PathVariable Long veiculoId) {
+    public ResponseEntity<VeiculoDTO> registrarSaida(@PathVariable Long veiculoId) throws ChangeSetPersister.NotFoundException {
         Veiculo veiculo = estacionamentoService.registrarSaida(veiculoId);
         VeiculoDTO veiculoDTO = new VeiculoDTO(veiculo);
         return new ResponseEntity<>(veiculoDTO, HttpStatus.OK);
@@ -34,7 +35,7 @@ public class EstacionamentoController {
 
     // Endpoint para verificar a capacidade do estacionamento
     @GetMapping("/capacidade")
-    public ResponseEntity<String> verificarCapacidade() {
+    public ResponseEntity<String> verificarCapacidade() throws ChangeSetPersister.NotFoundException {
         boolean estacionamentoCheio = estacionamentoService.isEstacionamentoCheio();
         if (estacionamentoCheio) {
             return new ResponseEntity<>("O estacionamento está cheio.", HttpStatus.OK);

@@ -3,7 +3,7 @@ package com.edusocrates.RM358568.svc_controleParquimetro.api;
 
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.DTO.MultaDTO;
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Multa;
-import com.edusocrates.RM358568.svc_controleParquimetro.repositorio.MultaRepository;
+import com.edusocrates.RM358568.svc_controleParquimetro.infraestrutura.repositorio.MultaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

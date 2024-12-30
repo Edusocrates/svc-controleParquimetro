@@ -1,7 +1,7 @@
 package com.edusocrates.RM358568.svc_controleParquimetro.api;
 
 
-import com.edusocrates.RM358568.svc_controleParquimetro.core.service.VeiculoService;
+import com.edusocrates.RM358568.svc_controleParquimetro.aplicacao.service.VeiculoService;
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.DTO.VeiculoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

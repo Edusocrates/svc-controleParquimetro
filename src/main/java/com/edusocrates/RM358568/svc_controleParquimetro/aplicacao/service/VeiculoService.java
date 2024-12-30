@@ -1,21 +1,19 @@
-package com.edusocrates.RM358568.svc_controleParquimetro.core.service;
+package com.edusocrates.RM358568.svc_controleParquimetro.aplicacao.service;
 
-import com.edusocrates.RM358568.svc_controleParquimetro.dominio.DTO.VeiculoDTO;
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Enum.Status;
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Enum.StatusVaga;
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Multa;
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Vaga;
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Veiculo;
-import com.edusocrates.RM358568.svc_controleParquimetro.repositorio.MultaRepository;
-import com.edusocrates.RM358568.svc_controleParquimetro.repositorio.VagaRepository;
-import com.edusocrates.RM358568.svc_controleParquimetro.repositorio.VeiculoRepository;
+import com.edusocrates.RM358568.svc_controleParquimetro.infraestrutura.repositorio.MultaRepository;
+import com.edusocrates.RM358568.svc_controleParquimetro.infraestrutura.repositorio.VagaRepository;
+import com.edusocrates.RM358568.svc_controleParquimetro.infraestrutura.repositorio.VeiculoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 @Service
 public class VeiculoService {
