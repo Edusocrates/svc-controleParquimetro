@@ -92,6 +92,33 @@ A aplicação foi estruturada com a arquitetura **Clean Architecture**, separand
 - ### GET /multa/{id}**  
   Retorna os detalhes de uma multa específica.
 
+## Observação
+
+Este projeto conta com a integração do **Springdoc OpenAPI** para a documentação das APIs implementadas. Com isso, é possível acessar uma interface interativa para explorar e testar os endpoints diretamente no navegador.
+
+### Acesso à Documentação
+
+Após iniciar a aplicação, a documentação pode ser acessada pelo seguinte endereço:
+http://localhost:8080/swagger-ui/index.html
+
+### Funcionalidades Disponíveis na Documentação
+
+1. **Visualização dos Endpoints:** Todos os endpoints estão listados, organizados por categoria.
+2. **Testes Diretos:** Permite enviar requisições diretamente pelo navegador.
+3. **Especificação OpenAPI:** Uma especificação JSON ou YAML pode ser obtida para integração com outras ferramentas.
+
+## Comandos para Rodar a Aplicação
+
+### Docker
+Para gerenciar os containers e serviços da aplicação, utilizamos os seguintes comandos Docker:
+
+1. **Iniciar os serviços definidos no `docker-compose.yml`:**
+   ```bash
+   docker-compose up -d
+
+2. **Parar e remover os containers `docker-compose.yml`:**
+   ```bash
+   docker-compose down
 
 
 ## Estrutura do Projeto
