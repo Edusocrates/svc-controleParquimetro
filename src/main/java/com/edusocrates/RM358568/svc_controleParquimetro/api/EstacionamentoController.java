@@ -3,7 +3,7 @@ package com.edusocrates.RM358568.svc_controleParquimetro.api;
 
 import com.edusocrates.RM358568.svc_controleParquimetro.aplicacao.service.EstacionamentoService;
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.DTO.VeiculoDTO;
-import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Veiculo;
+import com.edusocrates.RM358568.svc_controleParquimetro.dominio.model.Veiculo;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;

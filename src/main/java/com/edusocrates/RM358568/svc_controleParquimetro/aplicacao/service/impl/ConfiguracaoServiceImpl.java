@@ -1,7 +1,7 @@
 package com.edusocrates.RM358568.svc_controleParquimetro.aplicacao.service.impl;
 
 import com.edusocrates.RM358568.svc_controleParquimetro.aplicacao.service.ConfiguracaoService;
-import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Configuracao;
+import com.edusocrates.RM358568.svc_controleParquimetro.dominio.model.Configuracao;
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.DTO.ConfiguracaoDTO;
 import com.edusocrates.RM358568.svc_controleParquimetro.infraestrutura.repositorio.ConfiguracaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;

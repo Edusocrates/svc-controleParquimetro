@@ -1,6 +1,6 @@
 package com.edusocrates.RM358568.svc_controleParquimetro.dominio.DTO;
 
-import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Vaga;
+import com.edusocrates.RM358568.svc_controleParquimetro.dominio.model.Vaga;
 
 public record VagaDTO(
         Long id,

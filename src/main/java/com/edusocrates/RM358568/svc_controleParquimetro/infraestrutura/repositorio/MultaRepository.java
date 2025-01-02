@@ -1,6 +1,6 @@
 package com.edusocrates.RM358568.svc_controleParquimetro.infraestrutura.repositorio;
 
-import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Multa;
+import com.edusocrates.RM358568.svc_controleParquimetro.dominio.model.Multa;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

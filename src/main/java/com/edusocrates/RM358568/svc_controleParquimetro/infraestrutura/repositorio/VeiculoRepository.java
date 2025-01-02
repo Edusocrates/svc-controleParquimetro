@@ -1,12 +1,11 @@
 package com.edusocrates.RM358568.svc_controleParquimetro.infraestrutura.repositorio;
 
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Enum.Status;
-import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Veiculo;
+import com.edusocrates.RM358568.svc_controleParquimetro.dominio.model.Veiculo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface VeiculoRepository extends JpaRepository<Veiculo, Long> {

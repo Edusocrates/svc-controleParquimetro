@@ -1,7 +1,7 @@
 package com.edusocrates.RM358568.svc_controleParquimetro.dominio.DTO;
 
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Enum.Status;
-import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Veiculo;
+import com.edusocrates.RM358568.svc_controleParquimetro.dominio.model.Veiculo;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

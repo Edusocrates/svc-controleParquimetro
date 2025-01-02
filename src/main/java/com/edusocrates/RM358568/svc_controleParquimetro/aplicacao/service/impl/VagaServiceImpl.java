@@ -1,10 +1,10 @@
 package com.edusocrates.RM358568.svc_controleParquimetro.aplicacao.service.impl;
 
 import com.edusocrates.RM358568.svc_controleParquimetro.aplicacao.service.VagaService;
-import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Configuracao;
+import com.edusocrates.RM358568.svc_controleParquimetro.dominio.model.Configuracao;
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.DTO.VagaDTO;
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Enum.StatusVaga;
-import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Vaga;
+import com.edusocrates.RM358568.svc_controleParquimetro.dominio.model.Vaga;
 import com.edusocrates.RM358568.svc_controleParquimetro.infraestrutura.repositorio.ConfiguracaoRepository;
 import com.edusocrates.RM358568.svc_controleParquimetro.infraestrutura.repositorio.VagaRepository;
 import org.springframework.beans.factory.annotation.Autowired;

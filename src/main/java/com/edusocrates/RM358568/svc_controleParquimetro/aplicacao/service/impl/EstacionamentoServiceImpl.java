@@ -2,12 +2,12 @@ package com.edusocrates.RM358568.svc_controleParquimetro.aplicacao.service.impl;
 
 
 import com.edusocrates.RM358568.svc_controleParquimetro.aplicacao.service.EstacionamentoService;
-import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Configuracao;
+import com.edusocrates.RM358568.svc_controleParquimetro.dominio.model.Configuracao;
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Enum.Status;
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Enum.StatusVaga;
-import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Multa;
-import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Vaga;
-import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Veiculo;
+import com.edusocrates.RM358568.svc_controleParquimetro.dominio.model.Multa;
+import com.edusocrates.RM358568.svc_controleParquimetro.dominio.model.Vaga;
+import com.edusocrates.RM358568.svc_controleParquimetro.dominio.model.Veiculo;
 import com.edusocrates.RM358568.svc_controleParquimetro.infraestrutura.repositorio.ConfiguracaoRepository;
 import com.edusocrates.RM358568.svc_controleParquimetro.infraestrutura.repositorio.MultaRepository;
 import com.edusocrates.RM358568.svc_controleParquimetro.infraestrutura.repositorio.VagaRepository;

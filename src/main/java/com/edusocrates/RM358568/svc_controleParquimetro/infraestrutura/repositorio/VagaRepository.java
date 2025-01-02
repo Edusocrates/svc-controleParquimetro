@@ -1,7 +1,7 @@
 package com.edusocrates.RM358568.svc_controleParquimetro.infraestrutura.repositorio;
 
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Enum.StatusVaga;
-import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Vaga;
+import com.edusocrates.RM358568.svc_controleParquimetro.dominio.model.Vaga;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

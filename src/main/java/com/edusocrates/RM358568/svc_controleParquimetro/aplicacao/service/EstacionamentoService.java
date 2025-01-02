@@ -1,6 +1,6 @@
 package com.edusocrates.RM358568.svc_controleParquimetro.aplicacao.service;
 
-import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Veiculo;
+import com.edusocrates.RM358568.svc_controleParquimetro.dominio.model.Veiculo;
 import org.springframework.data.crossstore.ChangeSetPersister;
 
 public interface EstacionamentoService {

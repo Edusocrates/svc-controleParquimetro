@@ -1,4 +1,4 @@
-package com.edusocrates.RM358568.svc_controleParquimetro.dominio;
+package com.edusocrates.RM358568.svc_controleParquimetro.dominio.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

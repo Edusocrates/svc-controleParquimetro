@@ -1,4 +1,4 @@
-package com.edusocrates.RM358568.svc_controleParquimetro.dominio;
+package com.edusocrates.RM358568.svc_controleParquimetro.dominio.model;
 
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Enum.Status;
 import jakarta.persistence.*;

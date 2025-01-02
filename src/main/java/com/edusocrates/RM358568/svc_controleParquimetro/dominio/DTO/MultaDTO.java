@@ -1,6 +1,6 @@
 package com.edusocrates.RM358568.svc_controleParquimetro.dominio.DTO;
 
-import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Multa;
+import com.edusocrates.RM358568.svc_controleParquimetro.dominio.model.Multa;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

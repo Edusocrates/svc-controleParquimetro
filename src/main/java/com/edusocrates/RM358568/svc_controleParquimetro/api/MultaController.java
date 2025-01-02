@@ -2,7 +2,7 @@ package com.edusocrates.RM358568.svc_controleParquimetro.api;
 
 
 import com.edusocrates.RM358568.svc_controleParquimetro.dominio.DTO.MultaDTO;
-import com.edusocrates.RM358568.svc_controleParquimetro.dominio.Multa;
+import com.edusocrates.RM358568.svc_controleParquimetro.dominio.model.Multa;
 import com.edusocrates.RM358568.svc_controleParquimetro.infraestrutura.repositorio.MultaRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
