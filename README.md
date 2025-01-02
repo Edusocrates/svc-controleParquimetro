@@ -35,7 +35,6 @@ A aplicação foi estruturada com a arquitetura **Clean Architecture**, separand
 - **Linguagem**: Java 17
 - **Framework**: Spring Boot 3.3.4
 - **Banco de Dados**: PostgreSQL
-- **Ferramentas de Migração**: Flyway
 - **Gerenciamento de Dependências**: Maven
 - **Virtualização**: Docker e Docker Compose
 
@@ -92,5 +91,25 @@ A aplicação foi estruturada com a arquitetura **Clean Architecture**, separand
 
 - ### GET /multa/{id}**  
   Retorna os detalhes de uma multa específica.
+
+
+
+## Estrutura do Projeto
+```bash
+src/
+├── main/
+│   ├── java/
+│   │   └── com/edusocrates/RM358568/svc_controleParquimetro
+│   │       ├── api/   # Controllers
+│   │       ├── dominio/model       # Entidades de domínio
+│   │       ├── dominio/dto/          # Data Transfer Objects (DTOs)
+│   │       ├── dominio/enum/          # Enums
+│   │       ├── infratestrutura/repositorio/   # Interfaces de Repositórios
+│   │       ├── infratestrutura/configuracao/   # Gerenciamento de Configurações
+│   │       ├── aplicacao/service/      # Regras de negócio (Camada de Serviço)
+│   └── resources/
+│       ├── application.yaml   # Configurações da aplicação
+│       ├── application-local.yaml   # Configurações da aplicação local
+│       ├── application-dev.yaml   # Configurações da aplicação "dev"
 
 
